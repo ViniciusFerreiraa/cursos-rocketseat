@@ -1,0 +1,69 @@
+.product-list {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.product-list article {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-list article p {
+    font-size: 16px;
+    color: #999;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.product-list article a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    margin-top: 10px;
+    background: none;
+    border: 2px solid #da552f;
+    border-radius: 5px;
+    color: #da552f;
+    font-style: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+
+.product-list article a:hover {
+    background: #da552f;
+    color: white;
+}
+
+.product-list .action {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.product-list .action button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background: #da552f;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product-list .action button[disabled]{
+    cursor: default;
+    opacity: .5;
+}
+
+.product-list .action button:not[disabled]:hover {
+    opacity: .7;
+}
