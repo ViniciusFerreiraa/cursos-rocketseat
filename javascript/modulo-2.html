@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Módulo 2</title>
+</head>
+<body>
+
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
+    
+    <ul id="list"></ul>
+    
+    <button class="button">Add new box</button>
+    <div id="app"></div>
+
+    <script>
+        //Exercícios: https://station.rocketseat.com.br/api/files/1536685637161.pdf
+        //resultados: https://github.com/Rocketseat/starter-javascript-exercicios/tree/master/M%C3%B3dulo%2002
+        
+        //Exercício 1
+        var button = document.querySelector("button.button");
+        var containerBox = document.querySelector("div#app");
+        
+        button.onclick = function(){
+            var newBox = document.createElement('div');
+            
+            newBox.style.display = 'inline-block';
+            newBox.style.width = '100px';
+            newBox.style.height = '100px';
+            newBox.style.margin = '10px 10px 0 0';
+            newBox.style.backgroundColor = 'red';
+
+            newBox.onmouseover = function(){
+                newBox.style.backgroundColor = getRandomColor();
+            }
+
+            containerBox.appendChild(newBox);
+        }
+
+
+        //Exercício 2
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+    
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        //Exercício 3
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var containerLis = document.querySelector('#list');
+
+        function addItens(text){
+            var newLi = document.createElement('li');
+            var text = document.createTextNode(text);
+
+            newLi.appendChild(text);
+            containerLis.appendChild(newLi);
+        }
+        
+        for (nome of nomes) {
+            addItens(nome);
+        }
+
+        //Exercício 4    
+        var inputElement = document.querySelector('input');
+        function adicionar(){
+            addItens(inputElement.value);
+        }
+    </script>
+</body>
+</html>

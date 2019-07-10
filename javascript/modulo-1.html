@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Módulo 1</title>
+</head>
+<body>
+    
+    <script>
+        //Exercícios: https://station.rocketseat.com.br/api/files/1536602858136.pdf
+        //resultados: https://github.com/Rocketseat/starter-javascript-exercicios/tree/master/M%C3%B3dulo%2001
+        
+        //Exercício 1
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+
+        function resultado1(end){
+            return(
+                "o usuário mora em " + end.cidade +
+                " / " + end.uf +
+                ", no bairro " + end.bairro +
+                ", na rua " + end.rua +
+                " com nº " + end.numero + "."
+            );
+        }
+        
+        console.log( "Exercício 1" );
+        console.log( resultado1(endereco) );
+        console.log( " " );
+
+
+        //Exercício 2
+        function pares(x, y) {
+            // var allPares = Array;
+            var allPares = "";
+            var ind = 0;
+            do{
+                if(x % 2 === 0){
+                    if(allPares === ""){
+                        allPares = x;
+                    }
+                    else{
+                        allPares = allPares + ", " + x;
+                    }
+                }
+                
+                x ++;
+                ind ++;
+            }while(x < y)
+
+            return allPares;
+        }
+
+        var resultado2 = pares(32, 321);
+
+        console.log( "Exercício 2" );
+        console.log( resultado2 );
+        console.log( " " );
+
+
+        //Exercício 3
+        function temHabilidade(skills) {
+            // skillsLength = skills.length;
+            // i = 0;
+
+            // while(i < skillsLength){
+            //     if(skills[i] === "Javascript"){
+            //         return true;
+            //     }
+
+            //     i++;
+            // }
+
+            // return false;
+            return skills.indexOf("Javascript") !== -1;
+        }
+
+        var skills = ["Javascript", "ReactJS", "React Native"];
+
+        console.log( "Exercício 3" );
+        console.log( temHabilidade(skills) );
+        console.log( " " );
+
+
+        //Exercício 4
+        function experiencia(anos) {
+            if(anos <= 1 )
+                return "iniciante"
+            else if(anos <= 3 )
+                return "Intermediário"
+            else if(anos <= 6 )
+                return "Avançado"
+            else
+                return "Jedi Master"
+        }
+
+        var anosEstudo = 7;
+        var resultado4 = experiencia(anosEstudo);
+
+        console.log( "Exercício 4" );
+        console.log( resultado4 );
+        console.log( " " );
+
+
+        //Exercício 5
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        function resultado5(user){
+            var frase;
+            for (user of usuarios) {
+                console.log(
+                "O " +
+                    user.nome +
+                    " possui as habilidades: " +
+                    user.habilidades.join(", ")
+                );
+            }
+        }
+
+        console.log( "Exercício 5" );
+        resultado5(usuarios);
+    </script>
+</body>
+</html>
